@@ -31,10 +31,95 @@
             position:relative;
             top:10em;
         }
+        .program{
+                border: solid lightgray 4px;
+                background:white;
+                z-index:5;
+                position:absolute;
+                padding:1em;
+                border-radius:1em;
+                top:162px;
+                left:416px;
+                box-shadow:0em 0em 1em white;
+                width:8em;
+                height:12em;
+                animation:Shrink 1s;
+                
+            }
+        .program:hover{
+                background:white;
+                z-index:5;
+                position:absolute;
+                padding:1em;
+                border-radius:1em;
+                top:162px;
+                left:416px;
+                box-shadow:0em 0em 2em white;
+                width:8em;
+                height:12em;
+                cursor:move;
+                
+            }
     </style>
 </head>
 <body>
     <h1 id="T">Kitty Koding</h1>
     <h3 id="L">A group of freinds just havin fun</h3>
+    <div class="program"><h2>About us</h2>2-3-23<hr><button>Visit</button><hr>A thing about us!</div>
+    <script>
+        //{
+        var maxup=1000000;
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            elmnt.onmousedown = dragMouseDown;
+          }
+        
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement
+            document.onmousemove = elementDrag;
+          }
+        
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            elmnt.style.zIndex = maxup;
+          }
+        
+          function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+            maxup++;
+          }
+        }
+        //}
+                    for(var i =0;i!==document.getElementsByClassName("program").length;i++){
+                        document.getElementsByClassName("program")[i].style.zIndex=Math.random()*document.getElementsByClassName("program").length;
+                        document.getElementsByClassName("program")[i].style.left=Math.random()*416+"px";
+                        document.getElementsByClassName("program")[i].style.top=Math.random()*162+"px";
+                        document.getElementsByClassName("program")[i].style.transform="rotate("+(20-Math.random()*40)+"deg)";
+                        dragElement(document.getElementsByClassName("program")[i]);
+                    }
+                    
+                    for(var i =0;i!==document.getElementsByTagName("hr").length;i+=2){
+                        var thingy = document.getElementsByTagName("hr")[i];
+                        var thingy1 = document.getElementsByTagName("hr")[i+1];
+                        var color = "rgb("+Math.random()*100+","+Math.random()*250+","+Math.random()*250+")";
+                        thingy.style.borderTop="solid 0.5em "+color;
+                        thingy1.style.borderTop="solid 0.5em "+color;
+                    }
+                </script>
 </body>
 </html>
