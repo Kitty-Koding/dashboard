@@ -41,8 +41,8 @@
                 top:162px;
                 left:416px;
                 box-shadow:0em 0em 1em white;
-                width:8em;
-                height:12em;
+                width:12em;
+                height:16em;
                 animation:Shrink 1s;
                 
             }
@@ -55,17 +55,34 @@
                 top:162px;
                 left:416px;
                 box-shadow:0em 0em 2em white;
-                width:8em;
-                height:12em;
+                width:12em;
+                height:16em;
                 cursor:move;
                 
+            }
+            @keyframes Grow{
+                to{
+                   box-shadow:0em 0em 2em white; 
+                }
+                from{
+                    box-shadow:0em 0em 1em white;
+                }
+            }
+            @keyframes Shrink{
+                from{
+                   box-shadow:0em 0em 2em white;
+                }
+                to{
+                    box-shadow:0em 0em 1em white;
+                }
             }
     </style>
 </head>
 <body>
     <h1 id="T">Kitty Koding</h1>
     <h3 id="L">A group of freinds just havin fun</h3>
-    <div class="program"><h2>About us</h2>2-3-23<hr><button>Visit</button><hr>A thing about us!</div>
+    <div class="program"><h2>Lorem</h2>Ispum<hr><button>Visit</button><hr>Dolor</div>
+    <div class="program"><h2>Lorem</h2>Ispum<hr><button>Visit</button><hr>Dolor</div>
     <script>
         //{
         var maxup=1000000;
