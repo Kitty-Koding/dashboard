@@ -43,53 +43,24 @@
                 box-shadow:0em 0em 1em white;
                 width:12em;
                 height:16em;
-                animation:Shrink 1s;
                 text-align: center;
                 
-            }
-        .program:hover{
-                background:white;
-                z-index:5;
-                position:absolute;
-                padding:1em;
-                border-radius:1em;
-                top:162px;
-                left:416px;
-                box-shadow:0em 0em 2em white;
-                width:12em;
-                height:16em;
-                cursor:move;
-                text-align: center;
             }
             button{
                 width: 100%;
                 background: #cc6e6e;
-                border-color: #c74e4e;
+                border-radius: 100%;
+                border:#c74e4e strait 0.2em;
                 color:white;
-            }
-            @keyframes Grow{
-                to{
-                   box-shadow:0em 0em 2em white; 
-                }
-                from{
-                    box-shadow:0em 0em 1em white;
-                }
-            }
-            @keyframes Shrink{
-                from{
-                   box-shadow:0em 0em 2em white;
-                }
-                to{
-                    box-shadow:0em 0em 1em white;
-                }
+                font-weight:bolder;
             }
     </style>
 </head>
 <body>
     <h1 id="T">Kitty Koding</h1>
     <h3 id="L">A group of friends just havin fun</h3>
-    <div class="program"><h2>Lorem</h2>Ispum<hr><button>Visit</button><hr>Dolor</div>
-    <div class="program"><h2>Lorem</h2>Ispum<hr><button>Visit</button><hr>Dolor</div>
+    <div class="program"><h2>Lorem</h2>Ispum<br><button>Visit</button><br>Dolor</div>
+    <div class="program"><h2>Lorem</h2>Ispum<br><button>Visit</button><br>Dolor</div>
     <script>
         //{
         var maxup=1000000;
